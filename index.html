@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PERARASU M — Neural Interface Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Syne:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ═══════════════════ CANVAS BACKGROUND ═══════════════════ -->
+<canvas id="neuralCanvas"></canvas>
+<div class="scanline-overlay"></div>
+<div class="vignette-overlay"></div>
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav id="mainNav">
+  <div class="nav-logo">
+    <span class="logo-bracket">[</span>
+    <span class="logo-text">PM</span>
+    <span class="logo-bracket">]</span>
+    <span class="logo-pulse"></span>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle nav">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#summary" data-section="summary"><span class="nav-num">01</span>Profile</a></li>
+    <li><a href="#education" data-section="education"><span class="nav-num">02</span>Education</a></li>
+    <li><a href="#skills" data-section="skills"><span class="nav-num">03</span>Skills</a></li>
+    <li><a href="#experience" data-section="experience"><span class="nav-num">04</span>Experience</a></li>
+    <li><a href="#projects" data-section="projects"><span class="nav-num">05</span>Projects</a></li>
+    <li><a href="#achievements" data-section="achievements"><span class="nav-num">06</span>Achieve</a></li>
+    <li><a href="#certifications" data-section="certifications"><span class="nav-num">07</span>Certs</a></li>
+    <li><a href="#extracurricular" data-section="extracurricular"><span class="nav-num">08</span>Extra</a></li>
+    <li><a href="#contact" data-section="contact"><span class="nav-num">09</span>Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════ HEADER ═══════════════════ -->
+<header id="header">
+  <div class="header-bg-grid"></div>
+  <div class="header-content">
+    <div class="header-tag-row">
+      <span class="sys-tag">SYS::IDENTITY</span>
+      <span class="sys-dot"></span>
+      <span class="sys-tag">ONLINE</span>
+    </div>
+    <div class="header-name-wrap">
+      <h1 class="header-name" id="headerName">
+  <span class="name-line" data-text="PERARASU">
+    PERARASU <span class="name-initial">M</span>
+  </span>
+</h1>
+      <div class="name-underline"></div>
+    </div>
+    <div class="header-role">
+      <span class="role-label">// </span>
+      <span class="role-text" id="roleTyper"></span>
+      <span class="cursor-blink">_</span>
+    </div>
+    <div class="header-meta">
+      <div class="meta-chip"><span class="chip-dot"></span>B.Tech IT · SJCE 2027</div>
+      <div class="meta-chip"><span class="chip-dot cyan"></span>AI/ML · Full-Stack</div>
+      <div class="meta-chip"><span class="chip-dot purple"></span>Chennai, India</div>
+    </div>
+    <div class="header-cta-row">
+  <a href="#projects" class="cta-btn primary">View Projects</a>
+  <a href="#contact" class="cta-btn secondary">Connect</a>
+  <a href="resume.pdf" class="cta-btn resume-btn" download="Perarasu_M_Resume.pdf" id="resumeDownloadBtn">
+    Download Resume
+  </a>
+</div>
+    <div class="header-stats">
+      <div class="stat-item">
+  <span class="stat-num" data-count="1000">0</span><span class="stat-plus">+</span>
+  <span class="stat-label">Problems Solved</span>
+</div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-count="5">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Open Source Contributions on Github</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-count="4">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Certifications</span>
+      </div>
+    </div>
+  </div>
+  
+</header>
+
+<!-- ═══════════════════ PROFILE SUMMARY ═══════════════════ -->
+<section id="summary" class="section reveal-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title">Profile <span class="accent-text">Summary</span></h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="summary-grid">
+      <div class="summary-card glass-card tilt-card">
+        <div class="card-glow"></div>
+        <div class="summary-icon-wrap">
+          <svg class="summary-icon" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="28" stroke="var(--cyan)" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <circle cx="32" cy="32" r="16" stroke="var(--blue)" stroke-width="1"/>
+            <circle cx="32" cy="32" r="5" fill="var(--cyan)" opacity=".8"/>
+            <line x1="32" y1="4" x2="32" y2="16" stroke="var(--cyan)" stroke-width="1.5"/>
+            <line x1="32" y1="48" x2="32" y2="60" stroke="var(--cyan)" stroke-width="1.5"/>
+            <line x1="4" y1="32" x2="16" y2="32" stroke="var(--cyan)" stroke-width="1.5"/>
+            <line x1="48" y1="32" x2="60" y2="32" stroke="var(--cyan)" stroke-width="1.5"/>
+          </svg>
+        </div>
+        
+          <p class="summary-text">
+  I build real-world applications using 
+  <span class="highlight">AI</span> and 
+  <span class="highlight">full-stack technologies</span>. 
+  From computer vision systems to scalable web platforms, I focus on creating solutions that solve practical problems and deliver impact.
+</p>
+<p class="highlight-line">
+Building. Learning. Shipping.
+</p>
+
+        <div class="summary-tags">
+          <span class="s-tag">AI/ML</span>
+          <span class="s-tag">Full-Stack</span>
+          <span class="s-tag">Software Dev</span>
+          <span class="s-tag">Innovation</span>
+        </div>
+      </div>
+      <div class="summary-side">
+        <div class="sys-panel glass-card">
+          <div class="sys-panel-title"><span class="dot-indicator"></span>SYSTEM STATUS</div>
+          <div class="sys-row"><span>IDENTITY</span><span class="sys-val cyan">PERARASU M</span></div>
+          <div class="sys-row"><span>ROLE</span><span class="sys-val">IT Student / Developer</span></div>
+          <div class="sys-row"><span>INSTITUTION</span><span class="sys-val">SJCE 2027</span></div>
+          <div class="sys-row"><span>CGPA</span><span class="sys-val cyan">8.06</span></div>
+          <div class="sys-row"><span>STATUS</span><span class="sys-val green">● ACTIVE</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ EDUCATION ═══════════════════ -->
+<section id="education" class="section reveal-section">
+  <div class="section-inner">
+
+    <div class="section-header">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title">Education <span class="accent-text">Path</span></h2>
+      <div class="sec-line"></div>
+      <p class="edu-sub">My academic journey and growth in technology</p>
+    </div>
+
+    <div class="edu-timeline">
+      <div class="edu-track"></div>
+
+      <!-- UG -->
+      <div class="edu-item reveal-child tilt-card glass-card">
+        <div class="edu-node">
+          <div class="node-ring"></div>
+          <div class="node-core"></div>
+        </div>
+
+        <div class="edu-content">
+          <div class="edu-period">2023 — 2027</div>
+          <h3 class="edu-degree">B.Tech Information Technology</h3>
+          <div class="edu-institute">St. Joseph's College of Engineering , Chennai.</div>
+
+          <!-- UPDATED SCORE -->
+          <div class="edu-score">
+            <span>CGPA</span>
+            <strong>8.06</strong>
+          </div>
+        </div>
+
+        <div class="edu-badge">UG</div>
+      </div>
+
+      <!-- HSC -->
+      <div class="edu-item reveal-child tilt-card glass-card">
+        <div class="edu-node">
+          <div class="node-ring"></div>
+          <div class="node-core"></div>
+        </div>
+
+        <div class="edu-content">
+          <div class="edu-period">2021 — 2023</div>
+          <h3 class="edu-degree">Higher Secondary Education</h3>
+          <div class="edu-institute">Senthil Matric Higher Secondary School , Dharmapuri.</div>
+
+          <!-- UPDATED SCORE -->
+          <div class="edu-score">
+            <span>Percentage</span>
+            <strong>88%</strong>
+          </div>
+        </div>
+
+        <div class="edu-badge">HSC</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SKILLS ═══════════════════ -->
+<section id="skills" class="section reveal-section">
+  <div class="section-inner">
+
+    <div class="section-header">
+      <span class="sec-num">03</span>
+      <h2 class="sec-title">Neural <span class="accent-text">Skillset</span></h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="skills-grid">
+
+      <!-- PROGRAMMING -->
+      <div class="skill-cluster glass-card tilt-card reveal-child">
+        <div class="cluster-header"><span>Programming</span></div>
+
+        <div class="skill-tags">
+          <span class="sk-tag">Python <small class="percent">65%</small></span>
+          <span class="sk-tag">Java <small class="percent">75%</small></span>
+          <span class="sk-tag">C <small class="percent">70%</small></span>
+        </div>
+      </div>
+
+      <!-- TECHNICAL -->
+      <div class="skill-cluster glass-card tilt-card reveal-child">
+        <div class="cluster-header"><span>Technical</span></div>
+
+        <div class="skill-tags">
+          <span class="sk-tag">HTML <small class="percent">90%</small></span>
+          <span class="sk-tag">CSS <small class="percent">85%</small></span>
+          <span class="sk-tag">JavaScript <small class="percent">80%</small></span>
+        </div>
+      </div>
+
+      <!-- LIBRARIES -->
+      <div class="skill-cluster glass-card tilt-card reveal-child">
+        <div class="cluster-header"><span>Libraries</span></div>
+
+        <div class="skill-tags">
+          <span class="sk-tag">NumPy <small class="percent">85%</small></span>
+          <span class="sk-tag">Pandas <small class="percent">80%</small></span>
+          <span class="sk-tag">Matplotlib <small class="percent">75%</small></span>
+          <span class="sk-tag">Scikit-Learn <small class="percent">70%</small></span>
+        </div>
+      </div>
+
+      <!-- TOOLS -->
+      <div class="skill-cluster glass-card tilt-card reveal-child">
+        <div class="cluster-header"><span>Tools</span></div>
+
+        <div class="skill-tags">
+          <span class="sk-tag">VS Code <small class="percent">95%</small></span>
+          <span class="sk-tag">Git <small class="percent">80%</small></span>
+          <span class="sk-tag">GitHub <small class="percent">85%</small></span>
+          <span class="sk-tag">MongoDB <small class="percent">70%</small></span>
+          <span class="sk-tag">Canva <small class="percent">75%</small></span>
+        </div>
+      </div>
+
+      <!-- SOFT SKILLS -->
+      <div class="skill-cluster glass-card tilt-card reveal-child">
+        <div class="cluster-header"><span>Soft Skills</span></div>
+
+        <div class="skill-tags">
+          <span class="sk-tag">Communication <small class="percent">75%</small></span>
+          <span class="sk-tag">Problem Solving <small class="percent">65%</small></span>
+          <span class="sk-tag">Leadership <small class="percent">80%</small></span>
+        </div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="skill-cluster glass-card tilt-card reveal-child">
+        <div class="cluster-header"><span>Languages</span></div>
+
+        <div class="skill-tags">
+          <span class="sk-tag">English <small class="percent">70%</small></span>
+          <span class="sk-tag">Tamil <small class="percent">100%</small></span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- ═══════════════════ PROJECTS ═══════════════════ -->
+<section id="projects" class="section reveal-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="sec-num">05</span>
+      <h2 class="sec-title">Featured <span class="accent-text">Projects</span></h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card glass-card tilt-card reveal-child">
+        <div class="project-glow"></div>
+        <div class="project-num">P.01</div>
+        <div class="project-icon">
+          <svg viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="26" r="14" stroke="var(--cyan)" stroke-width="1.5"/>
+            <circle cx="32" cy="26" r="5" fill="var(--cyan)" opacity=".3" stroke="var(--cyan)" stroke-width="1"/>
+            <path d="M22 14 Q16 10 12 14" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M42 14 Q48 10 52 14" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="24" y="44" width="16" height="14" rx="3" stroke="var(--cyan)" stroke-width="1.5"/>
+            <line x1="32" y1="40" x2="32" y2="44" stroke="var(--cyan)" stroke-width="1.5"/>
+            <path d="M16 56 Q32 50 48 56" stroke="var(--purple)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="project-title">AI Driver Drowsiness Detection System</h3>
+        <p class="project-desc">Built a real-time driver monitoring system using MediaPipe with eye blink and yawn detection. Implemented alert system and live EAR graph visualization dashboard.</p>
+        <div class="project-tech-row">
+          <span class="p-tech">Python</span>
+          <span class="p-tech">MediaPipe</span>
+          <span class="p-tech">OpenCV</span>
+          <span class="p-tech">AI/ML</span>
+        </div>
+      </div>
+
+      <div class="project-card glass-card tilt-card reveal-child">
+        <div class="project-glow blue"></div>
+        <div class="project-num">P.02</div>
+        <div class="project-icon">
+          <svg viewBox="0 0 64 64" fill="none">
+            <rect x="8" y="10" width="48" height="36" rx="4" stroke="var(--blue)" stroke-width="1.5"/>
+            <path d="M18 30 Q26 20 32 28 Q38 36 46 24" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="30" r="2.5" fill="var(--cyan)"/>
+            <circle cx="46" cy="24" r="2.5" fill="var(--cyan)"/>
+            <rect x="26" y="46" width="12" height="6" rx="2" stroke="var(--blue)" stroke-width="1.5"/>
+            <line x1="20" y1="56" x2="44" y2="56" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="project-title">Food Delivery Website (MERN Stack)</h3>
+        <p class="project-desc">Developed a full-stack food ordering system with authentication, admin dashboard, role-based access, payment integration, and real-time tracking.</p>
+        <div class="project-tech-row">
+          <span class="p-tech blue">MongoDB</span>
+          <span class="p-tech blue">Express</span>
+          <span class="p-tech blue">React</span>
+          <span class="p-tech blue">Node.js</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ACHIEVEMENTS ═══════════════════ -->
+<section id="achievements" class="section reveal-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="sec-num">06</span>
+      <h2 class="sec-title">Key <span class="accent-text">Achievements</span></h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="ach-grid">
+
+      <div class="ach-card glass-card tilt-card reveal-child">
+        <div class="ach-icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <polygon points="24,4 29,18 44,18 32,27 37,42 24,33 11,42 16,27 4,18 19,18" stroke="var(--cyan)" stroke-width="1.5" fill="none"/>
+            <polygon points="24,10 28,20 39,20 30,27 34,38 24,31 14,38 18,27 9,20 20,20" fill="var(--cyan)" opacity=".15"/>
+          </svg>
+        </div>
+        <div class="ach-num">1000+</div>
+        <div class="ach-label">Problems solved on SkillRack coding platform</div>
+      </div>
+
+      <div class="ach-card glass-card tilt-card reveal-child">
+        <div class="ach-icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <rect x="8" y="28" width="32" height="14" rx="3" stroke="var(--purple)" stroke-width="1.5"/>
+            <path d="M16 28 L16 18 Q16 8 24 8 Q32 8 32 18 L32 28" stroke="var(--purple)" stroke-width="1.5"/>
+            <circle cx="24" cy="35" r="3" fill="var(--purple)" opacity=".8"/>
+          </svg>
+        </div>
+        <div class="ach-num ach-elite">ELITE</div>
+        <div class="ach-label">NPTEL Elite Certification in Mobile VR and AI</div>
+      </div>
+
+      <div class="ach-card glass-card tilt-card reveal-child">
+        <div class="ach-icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="16" stroke="var(--blue)" stroke-width="1.5"/>
+            <path d="M16 24 L22 30 L32 18" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="ach-num">5+</div>
+        <div class="ach-label">Open-Source Contributions on Github</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CERTIFICATIONS ═══════════════════ -->
+<section id="certifications" class="section reveal-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="sec-num">07</span>
+      <h2 class="sec-title">Certified <span class="accent-text">Credentials</span></h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="cert-list">
+
+      <!-- CERT 1 -->
+      <div class="cert-card glass-card tilt-card reveal-child">
+        <div class="cert-left">
+          <div class="cert-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="6" y="6" width="28" height="28" rx="4" stroke="var(--cyan)" stroke-width="1.5"/>
+              <path d="M13 20h14M13 14h8M13 26h10" stroke="var(--cyan)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="cert-body">
+          <div class="cert-name">Mobile Virtual Reality and Artificial Intelligence</div>
+          <div class="cert-issuer">NPTEL <span class="cert-badge">ELITE</span></div>
+        </div>
+
+        <a href="https://drive.google.com/file/d/1BRJabJ8yfSIGgpjID_Ouyvnc-tBlxVjE/view"
+           target="_blank"
+           class="cert-btn">
+           View Cert
+        </a>
+      </div>
+
+
+      <!-- CERT 2 -->
+      <div class="cert-card glass-card tilt-card reveal-child">
+        <div class="cert-left">
+          <div class="cert-icon blue">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="14" stroke="var(--blue)" stroke-width="1.5"/>
+              <path d="M14 20 Q17 14 20 20 Q23 26 26 20" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="cert-body">
+          <div class="cert-name">Python for Data Science</div>
+          <div class="cert-issuer">BIG-SI-BUCKS Innovation Pvt. Ltd.</div>
+        </div>
+
+        <a href="https://drive.google.com/file/d/1y98WD6miKlVwAgFZ36vCtiDFuspIZ3N9/view"
+           target="_blank"
+           class="cert-btn">
+           View Cert
+        </a>
+      </div>
+
+
+      <!-- CERT 3 -->
+      <div class="cert-card glass-card tilt-card reveal-child">
+        <div class="cert-left">
+          <div class="cert-icon purple">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="8" y="8" width="24" height="24" rx="3" stroke="var(--purple)" stroke-width="1.5"/>
+              <path d="M14 18l4 4 8-8" stroke="var(--purple)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="cert-body">
+          <div class="cert-name">Introduction to Java</div>
+          <div class="cert-issuer">SOLOLEARN</div>
+        </div>
+
+        <a href="https://drive.google.com/file/d/1f2QKP9btsCTTu_iCY61ND1_LMY87LJZP/view"
+           target="_blank"
+           class="cert-btn">
+           View Cert
+        </a>
+      </div>
+
+
+      <!-- CERT 4 -->
+      <div class="cert-card glass-card tilt-card reveal-child">
+        <div class="cert-left">
+          <div class="cert-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <polygon points="20,4 36,14 36,26 20,36 4,26 4,14" stroke="var(--cyan)" stroke-width="1.5"/>
+              <circle cx="20" cy="20" r="5" fill="var(--cyan)" opacity=".3" stroke="var(--cyan)" stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="cert-body">
+          <div class="cert-name">Data Science Professional</div>
+          <div class="cert-issuer">ORACLE University</div>
+        </div>
+
+        <a href="https://drive.google.com/file/d/19YxeR0D5MAzerj3ivjB763jMuyTNwU8R/view"
+           target="_blank"
+           class="cert-btn">
+           View Cert
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ EXTRA-CURRICULAR ═══════════════════ -->
+<section id="extracurricular" class="section reveal-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="sec-num">08</span>
+      <h2 class="sec-title">Extra <span class="accent-text">Activities</span></h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="extra-timeline">
+
+      <!-- ITEM 1 -->
+      <div class="extra-item reveal-child">
+        <div class="extra-node"></div>
+        <div class="extra-content glass-card">
+          <span class="extra-tag">Workshops</span>
+          <p>Hands-on workshops in AI/ML, Cybersecurity, and Full-Stack development</p>
+        </div>
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="extra-item reveal-child">
+        <div class="extra-node blue"></div>
+        <div class="extra-content glass-card">
+          <span class="extra-tag">Practice</span>
+          <p>Maintained consistent daily coding streak on SkillRack (1000+ problems)</p>
+        </div>
+      </div>
+
+      <!-- ITEM 3 -->
+      <div class="extra-item reveal-child">
+        <div class="extra-node purple"></div>
+        <div class="extra-content glass-card">
+          <span class="extra-tag">Community</span>
+          <p>Actively sharing and engaging in technical content on LinkedIn</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ CONTACT ═══════════════════ -->
+<section id="contact" class="section reveal-section">
+  <div class="section-inner">
+    
+    <div class="section-header">
+      <span class="sec-num">09</span>
+      <h2 class="sec-title">Get In <span class="accent-text">Touch</span></h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <!-- CENTER MESSAGE -->
+    <div class="contact-center glass-card reveal-child">
+      <div class="contact-ring"></div>
+      <p>Driven to build meaningful tech. Open to opportunities where I can learn, contribute, and create real impact.</p>
+    </div>
+
+    <!-- CONTACT GRID -->
+    <div class="contact-grid">
+
+      <!-- EMAIL -->
+      <a href="mailto:arasumnps2005@gmail.com" class="contact-card reveal-child">
+        <div class="contact-icon cyan">
+          ✉
+        </div>
+        <div class="contact-info">
+          <span>Email</span>
+          <p>arasumnps2005@gmail.com</p>
+        </div>
+      </a>
+      <!-- PHONE -->
+<a href="tel:8438549280" class="contact-card reveal-child">
+  <div class="contact-icon cyan">📞</div>
+  <div class="contact-info">
+    <span>Phone</span>
+    <p>+91 84385 49280</p>
+  </div>
+</a>
+
+      <!-- LINKEDIN -->
+      <a href="https://www.linkedin.com/in/perarasu-m-9156b7309" target="_blank" class="contact-card reveal-child">
+        <div class="contact-icon blue">in</div>
+        <div class="contact-info">
+          <span>LinkedIn</span>
+          <p>perarasu-m-9156b7309</p>
+        </div>
+      </a>
+
+      <!-- GITHUB -->
+      <a href="https://github.com/perarasu2713" target="_blank" class="contact-card reveal-child">
+        <div class="contact-icon purple">⌁</div>
+        <div class="contact-info">
+          <span>GitHub</span>
+          <p>perarasu2713</p>
+        </div>
+      </a>
+
+      <!-- LEETCODE -->
+      <a href="https://leetcode.com/u/perarasumadhes/" target="_blank" class="contact-card reveal-child">
+        <div class="contact-icon cyan">⌨</div>
+        <div class="contact-info">
+          <span>LeetCode</span>
+          <p>perarasumadhes</p>
+        </div>
+      </a>
+
+      <!-- RESUME -->
+      <a href="resume.pdf" download class="contact-card reveal-child">
+        <div class="contact-icon green">⬇</div>
+        <div class="contact-info">
+          <span>Resume</span>
+          <p>Download PDF</p>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <span class="logo-bracket">[</span><span class="logo-text">PM</span><span class="logo-bracket">]</span>
+    </div>
+    <div class="footer-text">PERARASU M &nbsp;·&nbsp; Portfolio &nbsp;·&nbsp; © 2026 All Rights Reserved</div>
+    <div class="footer-sys">SYS::ACTIVE <span class="footer-dot"></span></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
